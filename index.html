@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Aloha Editor Howling Mad Sneak Peek</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -34,6 +34,10 @@
 
 		section div.pad {
 			margin: 50px 0px;
+		}
+
+		.reveal p, .reveal li {
+			margin: 25px 0px;
 		}
 		</style>
 
@@ -68,14 +72,40 @@
 				</section>
 				<section>
 					<section>
-						<h2>Boundaries</h2>
+						<h1>Functional WYSIWIG</h1>
+
+						<p>
+							The importance of being stateless
+						</p>
+					</section>
+
+					<section>
+						<h2>Editor Stack</h2>
+
+						<pre><code>editor.stack = [
+  Selections.handle,
+  Typing.handle,
+  Blocks.handle,
+  DragDrop.handle,
+  Paste.handle,
+  function (alohaEvent) {
+    alohaEvent.editable = alohaEvent.editor.editables[1];
+    return alohaEvent;
+  },
+  Mouse.handle,
+  Keys.handle
+];</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Boundaries</h1>
 						<p>
 							<b>Ranges</b> vs. <b>Selections</b> vs. <b>Boundaries</b>
 						</p>
 					</section>
 					<section>
-						<h2>Ranges in different Browsers</h2>
-
+						<h2>Ranges in different* Browsers</h2>
 						<div class="pad">
 							<p><span style="background: white; color: #444; font-size: 60px; padding: 5px 10px;">This is <span style="background: red;" class="fragment">&nbsp;</span><b><em>important!</em></b></span></p>
 						</div>
@@ -95,14 +125,39 @@
 							<pre><code>This is <b><em>[]important!</em></b></code></pre>
 						</div>
 
+						<small>* guess who effed up badly...</small>
 					</section>
 					<section>
 						<h2>Boundaries to the Rescue!</h2>
 						
 						<p>
-							<a target="_blank" href="http://localhost/alohaeditor/demo/boundaries/">Aloha Editor Boundaries</a>
+							We tried...
 						</p>
+
+						<ul>
+							<li class="fragment">writing super complicated algorithms</li>
+							<li class="fragment">using <a target="_blank" href="https://code.google.com/p/rangy/">rangy.js</a></li>
+							<li class="fragment">fixing broken HTML code</li>
+							<li class="fragment">auto-correcting ranges ourselves</li>
+							<li class="fragment">introducing <a target="_blank" href="http://localhost/alohaeditor/demo/boundaries/">Aloha Editor Boundaries</a></li>
+						</ul>
 					</section>
+				</section>
+				<section>
+					<h1>Boromir</h1>
+
+					<img src="boromir.jpg" />
+
+					<p>
+						<a target="_blank" href="http://localhost/alohaeditor/demo/boromir/">Aloha Editor Boromir</a>
+					</p>
+				</section>
+				<section>
+					<h1>Bye!</h1>
+
+					<p>
+						made with <a target="_blank" href="http://lab.hakim.se/reveal-js/#/">http://lab.hakim.se/reveal-js/#/</a>
+					</p>
 				</section>
 			</div>
 
