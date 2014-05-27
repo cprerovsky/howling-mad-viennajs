@@ -82,7 +82,11 @@
 					<section>
 						<h2>Editor Stack</h2>
 
-						<pre><code>editor.stack = [
+						<p>
+							The editor stack contains all the functions passed for each browser event.
+						</p>
+
+						<pre><code>aloha.editor.stack = [
   Selections.handle,
   Typing.handle,
   Blocks.handle,
@@ -95,6 +99,24 @@
   Mouse.handle,
   Keys.handle
 ];</code></pre>
+					</section>
+
+					<section>
+						<h2>Integrating Aloha Editor</h2>
+
+						<p>Integration of Aloha Editor into your application is a matter of</p>
+
+						<ul>
+							<li>aloha()-fying editable nodes
+<pre><code>aloha(document.querySelector('.aloha-editable'));</code></pre>
+							</li>
+							<li>and tapping into the editor stack
+<pre><code>aloha.editor.stack
+	.unshift(function myHandler(alohaEvent) {
+	// your magic goes here
+});</code></pre>
+							</li>
+						</ul>
 					</section>
 				</section>
 				<section>
@@ -111,7 +133,7 @@
 						</div>
 
 						<div class="pad fragment">
-							<pre><code>This is<b><em>important!</em></b></code></pre>
+							<pre><code>This is <b><em>important!</em></b></code></pre>
 						</div>
 
 
