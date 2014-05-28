@@ -21,6 +21,11 @@
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<style type="text/css">
+		.reveal section img {
+			border: 0;
+			background: transparent;
+		}
+
 		.reveal section img.logo {
 			width: 50px; 
 			height: 50px; 
@@ -38,6 +43,20 @@
 
 		.reveal p, .reveal li {
 			margin: 25px 0px;
+		}
+		.reveal pre code {
+			padding: 10px;
+		}
+
+		#portraits div {
+			width: 50%;
+			float: left;
+		}
+
+		#portraits img {
+			height: 200px;
+			width: 200px;
+			border-radius: 100px;
 		}
 		</style>
 
@@ -66,9 +85,29 @@
 				<section>
 					<h1>Howling Mad</h1>
 					<h3>Aloha Editor Sneak Peek</h3>
+
+					<br>
+					<br>
 					<p>
-						<small><a href="https://github.com/cprerovsky">Clemens Prerovsky</a> / <a href="http://twitter.com/blacktarmac">@blacktarmac</a></small>
+						<img src="clemens.png" style="width: 100px; heigh: 100px; border-radius: 50px" /><br>
+						<small><a href="https://github.com/cprerovsky">Clemens Prerovsky</a><br><a href="http://twitter.com/blacktarmac">@blacktarmac</a></small>
 					</p>
+					<br> 
+					<p><a href="http://www.gentics.com"><img src="gentics.png" style="border: 0; background: white; box-shadow: none; padding: 10px 20px;"></a></p>
+				</section>
+				<section>
+					<h1>Heavy Lifters</h1>
+
+					<div id="portraits">
+						<div>
+							<img src="petro.jpeg" />
+							<p><a href="https://github.com/petrosalema">Petro Salema</a></p>
+						</div>
+						<div>
+							<img src="tobi.png" />
+							<p><a href="https://github.com/deliminator">Tobias Steiner</a></p>
+						</div>
+					</div>
 				</section>
 				<section>
 					<section>
@@ -77,8 +116,8 @@
 						<p>
 							The importance of being stateless
 						</p>
-					</section>
 
+					</section>
 					<section>
 						<h2>Editor Stack</h2>
 
@@ -100,23 +139,33 @@
   Keys.handle
 ];</code></pre>
 					</section>
-
+					<section>
+						<h2>Aloha Editor handles <big style="font-size: 150%; background: white; color: #444; padding: 0px 20px;">EVERYTHING</big></h2>
+<br/>
+						<ul>
+							<li>caret placement &amp; display</li>
+							<li>inserting characters</li>
+							<li>inserting node like &lt;p&gt; and &lt;br /&gt;</li>
+							<li>no more browser code cleanup</li>
+							<li>no more external libraries</li>
+						</ul>
+					</section>
 					<section>
 						<h2>Integrating Aloha Editor</h2>
 
 						<p>Integration of Aloha Editor into your application is a matter of</p>
 
-						<ul>
-							<li>aloha()-fying editable nodes
-<pre><code>aloha(document.querySelector('.aloha-editable'));</code></pre>
-							</li>
-							<li>and tapping into the editor stack
-<pre><code>aloha.editor.stack
-	.unshift(function myHandler(alohaEvent) {
+						<br />
+
+						<p>loading aloha.js :)</p>
+
+						<p class="fragment">aloha()-fying editable nodes</p>
+						<pre class="fragment"><code>aloha(document.querySelector('.aloha-editable'));</code></pre>
+						<br /> 
+						<p class="fragment">and tapping into the editor stack</p>
+						<pre class="fragment"><code>aloha.editor.stack.unshift(function myHandler(alohaEvent) {
 	// your magic goes here
 });</code></pre>
-							</li>
-						</ul>
 					</section>
 				</section>
 				<section>
@@ -168,14 +217,24 @@
 				<section>
 					<h1>Boromir</h1>
 
-					<img src="boromir.jpg" />
+					<p class="fragment">
+						<img src="boromir.jpg" />
+					</p>
 
-					<p>
+					<p class="fragment">
 						<a target="_blank" href="http://localhost/alohaeditor/demo/boromir/">Aloha Editor Boromir</a>
 					</p>
 				</section>
 				<section>
-					<h1>Bye!</h1>
+					<h1>Milestones 2014</h1>
+
+					<ul>
+						<li>June: dogfooding phase</li>
+						<li>Sept: official release</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Cheers!</h1>
 
 					<p>
 						made with <a target="_blank" href="http://lab.hakim.se/reveal-js/#/">http://lab.hakim.se/reveal-js/#/</a>
